@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/creatNewPrj/creatNewPrj",
+    
+    
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f6b427",
+    "navigationBarTitleText": "计划管理",
+    "navigationBarTextStyle":"white"
+  }
+}

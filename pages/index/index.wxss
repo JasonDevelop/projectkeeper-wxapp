@@ -1,0 +1,61 @@
+/**todo.wxss**/
+.page{
+  background: #eef0ea;
+}
+.todo-header {
+  background: #fef7d7;
+  display: block;
+  font-size: 28rpx;
+  padding: 12rpx 30rpx;
+  color: #9198AB;
+}
+
+.todo-list {
+  background: #fff;
+}
+
+
+/* todo-add */
+.todo-add {
+  position: fixed;
+  /*left: 50%;*/
+  right: 50rpx;
+  bottom: 60rpx;
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: -45rpx;
+  border-radius: 50%;
+  font-size: 60rpx;
+  line-height: 85rpx;
+  text-align: center;
+  background-color: #f6b427;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.todo-item{
+  margin-bottom: 1px;
+  background: #fff;
+  line-height: 45px; 
+}
+
+.index-endtime{
+  /* margin-left:200px; */
+  color: #ccc;
+
+}
+.index-text{
+  margin-left:5px; 
+}
+
+.item-line2{
+  margin-left: 10px; 
+  font-size: 15px;
+}
+
+.item-line3{
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+
