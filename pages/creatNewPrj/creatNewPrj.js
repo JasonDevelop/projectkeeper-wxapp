@@ -13,7 +13,8 @@ Page({
     pend:'',
     tname:'',
     tweight:'',
-    globalList:[]
+    globalList:[],
+    t2Display:'none'
   },
   savaPrj(){
     var list = [];
@@ -38,6 +39,13 @@ Page({
     wx.setStorage({
       key: 'globalList', // 存入list的id？
       data: globalList
+    })
+    // 点保存后跳转到主页面
+    wx.navigateTo({
+      url: '../index/index',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   handleCancelTap(){ // 点击取消返回到主页面
@@ -77,6 +85,11 @@ Page({
     this.setData({
       tweight: ev.detail.value
     });
+  },
+  addTaskEdit(){
+    this.setData({
+      t2Display:"bolck"
+    })
   },
 
   /**

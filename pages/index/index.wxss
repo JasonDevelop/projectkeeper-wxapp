@@ -58,4 +58,9 @@
   font-size: 15px;
 }
 
+#check{
+  width: 18px;
+  height: 18px;
+}
+
 

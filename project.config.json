@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
 	"appid": "wxbd2c907e06cbab31",
-	"projectname": "prj",
+	"projectname": "projectkeeper",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

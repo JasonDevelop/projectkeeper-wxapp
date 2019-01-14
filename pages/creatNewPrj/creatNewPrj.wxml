@@ -10,8 +10,8 @@
   <view class='line'>
     <text>截止时间</text>
     <input  class='inputHint' placeholder='输入计划截止时间' bindinput='InputValPend'></input>
-  </view>
-
+</view>
+<view id='t1'>
   <view class="todo-header">任务</view>
 
   <view class='line'>
@@ -22,8 +22,22 @@
     <text>任务权重</text>
     <input class = "inputHint" placeholder='输入任务权重' bindinput='InputValTweight'></input>
   </view>
+</view>
 
-  <button>任务+1</button>
+<view style="display:{{t2Display}}">
+  <view class="todo-header">任务</view>
+
+  <view class='line'>
+    <text>任务名称</text>
+    <input class="inputHint" placeholder='输入任务名称' bindinput='InputValTname'></input>
+  </view>
+  <view class='line'>
+    <text>任务权重</text>
+    <input class = "inputHint" placeholder='输入任务权重' bindinput='InputValTweight'></input>
+  </view>
+</view>
+
+  <button bindtap='addTaskEdit'>再加一个任务</button>
 
   <view class="button-group" style='width:100%'>
     <button class="button" bindtap="handleCancelTap">取消</button>

@@ -9,12 +9,14 @@
         <text class='index-endtime'>{{item.val[0].pend}}</text>
       </view>
       <view class='item-line2'>
-        <text>最近的子任务</text>
-        <text>截止时间</text>
+        <text>当前子任务 {{item.val[0].tname}}</text>
+        <image id = "check" src="../../assets/icon/check-circle.png"></image>
       </view>
+      <!--  
       <view class='item-line3'>
         <text>完成度</text>
       </view>
+      -->
 
     </view>
   </view>
