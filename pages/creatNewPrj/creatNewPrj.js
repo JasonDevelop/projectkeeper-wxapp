@@ -14,9 +14,30 @@ Page({
     tname:'',
     tweight:'',
     globalList:[],
-    t2Display:'none'
+    t2Display:'none',
+    array: ['1', '2', '3', '4'],
+    objectArray: [
+      {
+        id: 0,
+        name: '1'
+      },
+      {
+        id: 1,
+        name: '2'
+      },
+      {
+        id: 2,
+        name: '3'
+      },
+      {
+        id: 3,
+        name: '4'
+      }
+    ],
+    index: 0,
   },
   savaPrj(){
+    //
     var list = [];
     list.push({
       pname: this.data.pname,
@@ -34,7 +55,7 @@ Page({
     // var globalList = app.globalData.projectList;
     var globalList = this.data.globalList;
     globalList.push({
-      val:list
+      val: list
     });
     wx.setStorage({
       key: 'globalList', // 存入list的id？
@@ -89,6 +110,28 @@ Page({
   addTaskEdit(){
     this.setData({
       t2Display:"bolck"
+    })
+  },
+  //  点击权重组件确定事件  
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value,
+      tweight: e.detail.value
+    })
+  },
+  bindPStartDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      datePStart: e.detail.value,
+      pstart: e.detail.value
+    })
+  },
+  bindPEndDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      datePEnd: e.detail.value,
+      pend: e.detail.value
     })
   },
 

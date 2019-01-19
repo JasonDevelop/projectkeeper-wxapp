@@ -1,9 +1,7 @@
 {
   "pages":[
-    "pages/creatNewPrj/creatNewPrj",
     "pages/index/index",
-    
-    
+    "pages/creatNewPrj/creatNewPrj",
     
     "pages/detail/detail"
   ],

@@ -4,12 +4,31 @@
     <input class = "inputHint" placeholder='输入计划名称' bindinput='InputValPname' ></input>
   </view>
   <view class='line'>
-    <text>开始时间</text>
-    <input placeholder='输入计划开始时间' bindinput='InputValPstart' class='inputHint'></input>
+    <!-- <text>开始时间</text>
+    <input placeholder='输入计划开始时间' bindinput='InputValPstart' class='inputHint'></input> -->
+  <picker
+    mode="date"
+    value="{{datePStart}}"
+    start="2019-01-01"
+    end="2030-01-01"
+    bindchange="bindPStartDateChange"
+  >
+    <view class="picker">开始时间: {{datePStart}}</view>
+  </picker>
   </view>
   <view class='line'>
-    <text>截止时间</text>
-    <input  class='inputHint' placeholder='输入计划截止时间' bindinput='InputValPend'></input>
+
+    <!-- <text>截止时间</text>
+    <input  class='inputHint' placeholder='输入计划截止时间' bindinput='InputValPend'></input> -->
+  <picker
+    mode="date"
+    value="{{datePEnd}}"
+    start="2019-01-01"
+    end="2030-01-01"
+    bindchange="bindPEndDateChange"
+  >
+    <view class="picker">截止时间: {{datePEnd}}</view>
+  </picker>
 </view>
 <view id='t1'>
   <view class="todo-header">任务</view>
@@ -19,8 +38,15 @@
     <input class="inputHint" placeholder='输入任务名称' bindinput='InputValTname'></input>
   </view>
   <view class='line'>
-    <text>任务权重</text>
-    <input class = "inputHint" placeholder='输入任务权重' bindinput='InputValTweight'></input>
+    <!-- <text>任务权重</text> -->
+    <!-- <input class = "inputHint" placeholder='输入任务权重' bindinput='InputValTweight'></input> -->
+    <view class="section">
+  
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">权重选择：{{array[index]}}</view>
+    
+  </picker>
+</view>
   </view>
 </view>
 
@@ -32,8 +58,14 @@
     <input class="inputHint" placeholder='输入任务名称' bindinput='InputValTname'></input>
   </view>
   <view class='line'>
-    <text>任务权重</text>
+    <!-- <text>任务权重</text>
     <input class = "inputHint" placeholder='输入任务权重' bindinput='InputValTweight'></input>
+  </view> -->
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" mode = "selector">  
+    <view class="picker">  
+      国家：{{objectArray[index]}}  
+    </view>  
+  </picker>
   </view>
 </view>
 

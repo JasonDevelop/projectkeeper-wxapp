@@ -14,6 +14,7 @@ Page({
    * 子任务 {名称 taskName，权重 taskWeight，完成标志 taskIsFinished}
    */
   data: {
+    projectList:[]
   },
   toCreatNewPrjPage() {
     wx.navigateTo({
@@ -25,7 +26,7 @@ Page({
   },
   toDetailPage(ev) {
     //传出Prj的index
-    var index = ev.target.dataset.index;
+    var index = ev.currentTarget.dataset['index'];
     console.log(index);
     wx.navigateTo({
       url: '../detail/detail?prjIndex=' + index,
@@ -34,8 +35,64 @@ Page({
       complete: function(res) {},
     })
   },
+  longTap: function (ev) {
+    var that = this;
+    console.log(ev);
+    var index = ev.currentTarget.dataset['index'];
+    console.log("long tap")
+    wx.showModal({
+      title: '提示',
+      content: '确认删除吗?',
+      showCancel: true,
+      cancelText: "否",
+      confirmText: "是",
+      success: function (res) {
+        if (res.cancel) {
+          //点击取消,默认隐藏弹框
+        } else {
+          //点击确定
+          
+          console.log(index);
+          
+          wx.getStorage({
+            key: 'globalList',
+            success: function(res) {
+              wx.setData({
+                projectList:res.data
+              })
+            },
+          });
+          var projectList = wx.data.projectList;
+          console.log(projectList);
+          that.projectList = that.projectList.splice(index,1);
+
+          wx.setStorage({
+            key: 'globalList',
+            data: this.projectList,
+          })
+        }
+      },
+      fail: function (res) { },//接口调用失败的回调函数
+      complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
+    })
+  },
   getGlo(){
     console.log(app.globalData.info);
+  },
+  deleteProject(ev) {
+    // console.log(ev.target.dataset.index);
+    var n = ev.target.dataset.index;
+    var list = this.data.projectList;
+    list.splice(n, 1);
+
+    this.setData({
+      projectList: list
+    })
+    wx.setStorage({
+      key: 'globalList',
+      data: list
+    })
+
   },
 
   /**
